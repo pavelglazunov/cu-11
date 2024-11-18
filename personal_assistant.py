@@ -10,8 +10,6 @@ def shutdown():
     for storage in (notes_storage, tasks_storage, contacts_storage, fin_storage):
         storage.dump()
 
-    exit()
-
 
 _funcs = {
     1: notes_process,
