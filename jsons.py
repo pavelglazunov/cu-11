@@ -14,7 +14,7 @@ class JSONStorage:
         with open(self.path, "w", encoding="utf-8") as file:
             json.dump([obj.__dict__ for obj in self.storage], file)
 
-        logging.info("Успешно")
+        logging.info(f"{self.storage_object.__name__} успешно сохранен в {self.path}")
 
     def load(self):
         with open(self.path, "r", encoding="utf-8") as file:

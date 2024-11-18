@@ -1,15 +1,21 @@
 import logging
-from notes import process as notes_process
-from tasks import process as tasks_process
-from contacts import process as contacts_process
-from fin import process as fin_process
+from notes import process as notes_process, storage as notes_storage
+from tasks import process as tasks_process, storage as tasks_storage
+from contacts import process as contacts_process, storage as contacts_storage
+from fin import process as fin_process, storage as fin_storage
+
+
+def shutdown():
+    for storage in (notes_storage, tasks_storage, contacts_storage, fin_storage):
+        storage.dump()
+
 
 _funcs = {
     1: notes_process,
     2: tasks_process,
     3: contacts_process,
     4: fin_process,
-    6: exit,
+    6: shutdown,
 }
 
 
