@@ -1,8 +1,10 @@
 import logging
 from notes import process as notes_process
+from tasks import process as tasks_process
 
 _funcs = {
     1: notes_process,
+    2: tasks_process,
     6: exit,
 }
 
