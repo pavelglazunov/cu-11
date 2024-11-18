@@ -2,11 +2,13 @@ import logging
 from notes import process as notes_process
 from tasks import process as tasks_process
 from contacts import process as contacts_process
+from fin import process as fin_process
 
 _funcs = {
     1: notes_process,
     2: tasks_process,
     3: contacts_process,
+    4: fin_process,
     6: exit,
 }
 
