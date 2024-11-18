@@ -3,11 +3,14 @@ from notes import process as notes_process, storage as notes_storage
 from tasks import process as tasks_process, storage as tasks_storage
 from contacts import process as contacts_process, storage as contacts_storage
 from fin import process as fin_process, storage as fin_storage
+from calculation import process as calculation_process
 
 
 def shutdown():
     for storage in (notes_storage, tasks_storage, contacts_storage, fin_storage):
         storage.dump()
+
+    exit()
 
 
 _funcs = {
@@ -15,6 +18,7 @@ _funcs = {
     2: tasks_process,
     3: contacts_process,
     4: fin_process,
+    5: calculation_process,
     6: shutdown,
 }
 
